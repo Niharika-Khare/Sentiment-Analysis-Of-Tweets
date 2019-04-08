@@ -8,7 +8,7 @@ class PorterStemmer:
     def isConsonant(self, word, i):
         letter = word[i]
         if self.isCons(letter):
-            if letter == 'y' and self.isCons(word[i-1]):
+            if letter == 'y' and abs(i-1)<=len(word) and self.isCons(word[i-1]):
                 return False
             else:
                 return True
