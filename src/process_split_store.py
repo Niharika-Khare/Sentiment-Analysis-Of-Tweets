@@ -102,17 +102,3 @@ validation_df.to_csv("../input_data/validation_df.csv", sep=',')
 test_df = pd.concat([X_test, Y_test],axis='columns').reset_index(drop=True)
 test_df.to_csv("../input_data/test_df.csv", sep=',')
 
-
-# In[15]:
-
-
-all_words = []
-train_df.head()
-for line in train_df['processed']:
-    all_words.extend(line.split())
-
-
-# In[16]:
-
-
-print train_df.shape
