@@ -72,7 +72,7 @@ df['processed'] = processed_data
 df.head()
 
 
-# In[11]:
+# In[4]:
 
 
 from sklearn.model_selection import train_test_split
@@ -82,23 +82,24 @@ X_train_val, X_test , Y_train_val, Y_test = train_test_split(X,Y,test_size=0.2)
 X_train, X_val, Y_train, Y_val = train_test_split(X_train_val,Y_train_val,test_size=0.25)
 
 
-# In[12]:
-
-
-train_df = pd.concat([X_train, Y_train],axis='columns').reset_index(drop=True)
-train_df.to_csv("../input_data/train_df.csv", sep=',')
-
-
-# In[13]:
-
-
-validation_df = pd.concat([X_val, Y_val],axis='columns').reset_index(drop=True)
-validation_df.to_csv("../input_data/validation_df.csv", sep=',')
-
-
 # In[14]:
 
 
+train_df = pd.concat([X_train, Y_train],axis='columns').reset_index(drop=True)
+train_df.head()
+train_df.to_csv("../input_data/train_df.csv", sep=',',index=False)
+
+
+# In[6]:
+
+
+validation_df = pd.concat([X_val, Y_val],axis='columns').reset_index(drop=True)
+validation_df.to_csv("../input_data/validation_df.csv", sep=',',index=False)
+
+
+# In[7]:
+
+
 test_df = pd.concat([X_test, Y_test],axis='columns').reset_index(drop=True)
-test_df.to_csv("../input_data/test_df.csv", sep=',')
+test_df.to_csv("../input_data/test_df.csv", sep=',',index=False)
 
