@@ -41,6 +41,7 @@ print df.head()
 
 processed_data = list()
 
+
 for _, row in df.iterrows():
     processed_data.append(processTweet(row))
 
